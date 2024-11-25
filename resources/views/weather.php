@@ -12,7 +12,7 @@
 
 require "src/Weather.php";
 
-$weather = new Weather();
+$weather = new Weather('Tashkent');
 
 
 ?>

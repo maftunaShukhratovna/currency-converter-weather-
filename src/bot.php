@@ -25,4 +25,14 @@ class Bot {
             ':username' => $username
         ]);
     }
+
+    public function getUser($user_id):bool|array {
+        $query = "SELECT * FROM tgusers WHERE user_id = :user_id";
+        $db = new DB();
+        $stmt = $db->conn->prepare($query);
+        $stmt->execute([
+            ':user_id' => $user_id
+        ]);
+        return $stmt->fetch();
+    }
 }
